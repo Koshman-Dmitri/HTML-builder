@@ -5,7 +5,7 @@ const { stdin, stdout } = process;
 const myPath = path.join(__dirname, 'output.txt');
 
 function writeData(data) {
-  fs.writeFile(myPath, data, {flag: 'a'}, () => {});
+  fs.writeFile(myPath, data, { flag: 'a' }, () => {});
 }
 
 writeData('');
