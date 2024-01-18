@@ -12,7 +12,7 @@ writeData('');
 
 stdout.write('Enter text\n');
 stdin.on('data', (data) => {
-  const strData = data.toString().slice(0, -2);
+  const strData = data.toString().trim();
   if (strData === 'exit') process.exit();
   writeData(data);
 });
