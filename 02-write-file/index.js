@@ -8,7 +8,7 @@ function writeData(data) {
   fs.writeFile(myPath, data, { flag: 'a' }, () => {});
 }
 
-writeData('');
+fs.writeFile(myPath, '', () => {});
 
 stdout.write('Enter text\n');
 stdin.on('data', (data) => {
