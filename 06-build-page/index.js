@@ -8,7 +8,11 @@ fs.mkdir(distFolderPath, { recursive: true }, () => {});
 fs.mkdir(distFolderAssetsPath, { recursive: true }, () => {});
 bundleHtml();
 bundleCss();
-copyAssets(path.join(__dirname, 'assets'));
+fs.promises.rm(distFolderAssetsPath, { recursive: true }).then(() => {
+  fs.promises.mkdir(distFolderAssetsPath, { recursive: true }).then(() => {
+    copyAssets();
+  });
+});
 
 function bundleHtml() {
   const templatePath = path.join(__dirname, 'template.html');
